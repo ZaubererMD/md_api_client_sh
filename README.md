@@ -47,9 +47,6 @@ At the end, bot of the routines will output the response of the `session/login` 
 mdapi.sh login_hashed <USERNAME> <PASSWORD_HASH> | jq -r '.data.session.token'
 ```
 
-## Limitations
-The script currently does not work with SSL-Connections.
-
 ## TODO
 - Add SSL support
 - Add help option (-h)

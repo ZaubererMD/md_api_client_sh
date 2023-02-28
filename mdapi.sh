@@ -60,7 +60,7 @@ then
     PASSWORD_HASH=$( echo -n "$3$LOGIN_TOKEN" | sha256sum | cut -d ' ' -f1 )
 
     #perform login
-    echo $($0 -method "session/login" -username $2 -password $PASSWORD_HASH)
+    echo $($0 -method "session/login" -username $2 -password_hash $PASSWORD_HASH)
     
 else
     METHOD=""

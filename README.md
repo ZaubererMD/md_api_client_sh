@@ -11,7 +11,7 @@ sudo apt install sha256sum jq curl awk sed tr cut
 Most of these will already be present on a normal linux installation.
 
 ## Setup
-Setup the script by changing the URL and port at the top of the script to point to your instance of [md_api_server)[https://github.com/ZaubererMD/md_api_server)
+Setup the script by changing the URL and port at the top of the script to point to your instance of [md_api_server](https://github.com/ZaubererMD/md_api_server)
 ```sh
 # replace with url and port of your own md_api_server instance
 API_URL="http://localhost:3000"

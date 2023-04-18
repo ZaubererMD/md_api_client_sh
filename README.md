@@ -48,6 +48,5 @@ mdapi.sh login_hashed <USERNAME> <PASSWORD_HASH> | jq -r '.data.session.token'
 ```
 
 ## TODO
-- Add SSL support
 - Add help option (-h)
 - Add option to pass server URL and port 

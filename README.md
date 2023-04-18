@@ -1,7 +1,7 @@
 # md_api_client_sh
 Command line client for [md_api_server](https://github.com/ZaubererMD/md_api_server) written in bash.
 
-I developed this simple script to log measurements of sensors attached to a Raspberry Pi on my server.
+This was developed to allow a raspberry pi to transmit data collected from a collection of sensors to my [md_api_server](https://github.com/ZaubererMD/md_api_server) instance.
 
 ## Dependencies
 Install all dependencies:
@@ -25,7 +25,7 @@ For example, to call the `session/request_login_token` method run:
 mdapi.sh -method session/request_login_token
 ```
 
-Since the response of [md_api_server](https://github.com/ZaubererMD/md_api_server) is always JSON, you can parse it `jq`.
+Since the response of [md_api_server](https://github.com/ZaubererMD/md_api_server) is always JSON, you can parse it with `jq`.
 
 ### Login
 To simplify the login-procedure, this script comes with two additional routines.
@@ -42,7 +42,7 @@ mdapi.sh login_hashed <USERNAME> <PASWORD_HASH>
 ```
 The script will then request a login-token via `session/request_login_token` and perform a call to `session/login` afterwards.
 
-At the end, bot of the routines will output the response of the `session/login` call. Usually you will want to call another method with your newly acquired session, so you should extract the session-token for further communication with the API. This can be done using `jq` as follows:
+At the end, both of the routines will output the response of the `session/login` call. Usually you will want to call another method with your newly acquired session, so you should extract the session-token for further communication with the API. This can be done using `jq` as follows:
 ```sh
 mdapi.sh login_hashed <USERNAME> <PASSWORD_HASH> | jq -r '.data.session.token'
 ```
